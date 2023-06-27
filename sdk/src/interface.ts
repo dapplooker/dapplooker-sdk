@@ -1,10 +1,5 @@
-export interface ChartAPIInterface {
-  data: {
-    rows: [];
-    cols: [];
-    insights: [];
-    results_timezone: string;
-  };
-  json_query: Object;
-  status: string;
+export interface ErrorResponse {
+  success: boolean;
+  outputFormatEntered: string;
+  msg: string;
 }

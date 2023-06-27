@@ -1,5 +1,5 @@
 {
-  "name": "@dapplooker/sdk",
+  "name": "dapplooker-sdk",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -12,7 +12,9 @@
   },
   "keywords": [
     "dapplooker",
-    "dapplooker sdk"
+    "dapplooker sdk",
+    "web3 analytics",
+    "blockchain analytics"
   ],
   "repository": {
     "type": "git",
