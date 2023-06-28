@@ -117,11 +117,11 @@ getChartData();
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
 ## Resources
-- **[Website]([https://push.org](https://dapplooker.com/))** To checkout our Product.
-- **[Docs]([https://docs.push.org/developers/](https://dapplooker.notion.site/dapplooker/DappLooker-Documentation-f3113336bdce4ecea688fa0ba69cec98))** For comprehensive documentation.
-- **[Medium]([https://medium.com/push-protocol](https://dapplooker.medium.com/))** To learn more about our partners, new launches, etc.
+- **[Website](https://dapplooker.com/)** To checkout our Product.
+- **[Docs](https://dapplooker.notion.site/dapplooker/DappLooker-Documentation-f3113336bdce4ecea688fa0ba69cec98)** For comprehensive documentation.
+- **[Medium](https://dapplooker.medium.com/)** To learn more about our partners, new launches, etc.
 - **[GitHub](https://github.com/dapplooker/)** for source code, project board, issues, and pull requests.
-- **[Youtube]([https://twitter.com/pushprotocol](https://www.youtube.com/channel/UC1KJmtb3UhnWSN_sDv71_fg))** Subscribe to our YouTube channel for video tutorials, demos, and informative content.
+- **[Youtube](https://www.youtube.com/channel/UC1KJmtb3UhnWSN_sDv71_fg)** Subscribe to our YouTube channel for video tutorials, demos, and informative content.
 
 ## Contributing
 
