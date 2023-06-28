@@ -1,8 +1,8 @@
 {
     "name": "dapplooker-sdk",
-    "version": "1.0.0",
-    "description": "Integrate your DappLooker SDK and get popular charts data",
-    "author": "dapplooker",
+    "version": "0.0.1",
+    "description": "SDK for retrieving DappLooker chart data",
+    "author": "DappLooker",
     "license": "MIT",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

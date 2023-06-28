@@ -45,7 +45,7 @@ To start using the DappLooker SDK, follow these steps:
 
 #### 1. Install the SDK:
 ```bash
-npm install @dapplooker/dapplooker-sdk
+npm install dapplooker-sdk
 ```
 
 #### 2. Generate an API key:
