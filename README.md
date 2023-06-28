@@ -38,11 +38,12 @@ DappLooker is a Web3 analytics platform that is dedicated to making blockchain a
 # DappLooker SDK
 The dapplooker-sdk provides developers with programmatic access to reliable and comprehensive blockchain data in the Web3 environment. By integrating the DappLooker SDK, you can easily retrieve popular charts data for your decentralized applications (Dapps).
 
+### Node version: >=14
+
 ## Installation
 To start using the DappLooker SDK, follow these steps:
 
 #### 1. Install the SDK:
-##### Node.JS version >=14 supported
 ```bash
 npm install @dapplooker/dapplooker-sdk
 ```
