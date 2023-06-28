@@ -42,7 +42,7 @@ The dapplooker-sdk provides developers with programmatic access to reliable and 
 To start using the DappLooker SDK, follow these steps:
 
 #### 1. Install the SDK:
-
+##### Node.JS version >=14 supported
 ```bash
 npm install @dapplooker/dapplooker-sdk
 ```
