@@ -57,7 +57,8 @@ npm install @dapplooker/dapplooker-sdk
 ![img.png](.assets/AddKey.png)
 - Give your API key a name and Click "Generate".
 ![img.png](.assets/generateKey.png)
-- Now Copy your API Key.
+- Now Copy your API Key by clicking on copy icon
+![img.png](.assets/copyAPIKey.png)
 
 #### 3. Get Your Chart UUID
 
