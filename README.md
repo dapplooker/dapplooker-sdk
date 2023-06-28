@@ -53,16 +53,16 @@ npm install dapplooker-sdk
 - Create an account on the [DappLooker website](https://dapplooker.com/).
 - After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
   
-  ![img.png](.assets/APIPage.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPage.png)
 - Click on `+ API Key`.
 
-  ![img.png](.assets/AddKey.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/AddKey.png)
 - Provide a name for your API key and click on `Generate Key`.
 
-  ![img.png](.assets/generateKey.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/generateKey.png)
 - Copy your API key for future use.
 
-  ![img.png](.assets/copyAPIKey.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/copyAPIKey.png)
 
 #### 3. Get Your Chart UUID
 
@@ -72,10 +72,10 @@ npm install dapplooker-sdk
 
 - Click on the `API` Button
 
-  ![img.png](.assets/chartPageAPI.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/chartPageAPI.png)
 - Get the UUID of your chart from Endpoint of the chart API.
 
-  ![img.png](.assets/APIEndpoints.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIEndpoints.png)
 
 
 #### 4. Import the SDK
