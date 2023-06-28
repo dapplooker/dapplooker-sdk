@@ -26,8 +26,9 @@ DappLooker is a no-code multi-chain community-driven analytics and visualization
 
 DappLooker aims to empower everyone to easily understand blockchain data, do analytics and easily build beautiful charts and dashboards. You can build and share key metrics for Defi, NFT, gaming, and multi-chain protocols.
 </p>
-<br>
 
+### What We Do ?
+DappLooker is a Web3 analytics platform that is dedicated to making blockchain analytics accessible and simplified for everyone. Our goal is to provide a seamless and user-friendly experience With our intuitive, no-code platform, you can effortlessly analyze blockchain networks and Dapps. Our No-code interface allows you to create stunning charts and dashboards, enabling you to visualize and understand complex blockchain data without the need for coding skills.
 
 <p style="font-weight:600;">Welcome to the GitHub profile for DappLooker</p>
 
@@ -35,12 +36,10 @@ DappLooker aims to empower everyone to easily understand blockchain data, do ana
 
 
 # DappLooker SDK
-
-Programmatic access to the most reliable &amp; comprehensive blockchain data in Web3.
-
-Integrate your DappLooker SDK and get popular charts data
+The dapplooker-sdk provides developers with programmatic access to reliable and comprehensive blockchain data in the Web3 environment. By integrating the DappLooker SDK, you can easily retrieve popular charts data for your decentralized applications (Dapps).
 
 ## Installation
+To start using the DappLooker SDK, follow these steps:
 
 #### 1. Install the SDK:
 
@@ -48,64 +47,96 @@ Integrate your DappLooker SDK and get popular charts data
 npm install @dapplooker/dapplooker-sdk
 ```
 
-#### 2. Generate API key:
+#### 2. Generate an API key:
 
 - Create an account on the [DappLooker website](https://dapplooker.com/).
-- After Signup, Go to the [API keys](https://dapplooker.com/user/api) page.
-![img.png](.assets/APIPage.png)
-- Click "+ API key".
-![img.png](.assets/AddKey.png)
-- Give your API key a name and Click "Generate".
-![img.png](.assets/generateKey.png)
-- Now Copy your API Key by clicking on copy icon
-![img.png](.assets/copyAPIKey.png)
+- After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
+  
+  ![img.png](.assets/APIPage.png)
+- Click on `"+ API key"`.
+
+  ![img.png](.assets/AddKey.png)
+- Provide a name for your API key and click on `"Generate"`.
+
+  ![img.png](.assets/generateKey.png)
+- Copy your API key for future use.
+
+  ![img.png](.assets/copyAPIKey.png)
 
 #### 3. Get Your Chart UUID
 
-- Go to [DappLooker Analytics Website](https://analytics.dapplooker.com/)
+- Visit the [DappLooker Analytics Website](https://analytics.dapplooker.com/)
 - Create a new Chart or Open a Existing Created Chart
-![img.png](.assets/chartPageAPI.png)
-- Click "API" Button
-- Get the UUID of your chart from the chart API Endpoint
-![img.png](.assets/APIEndpoints.png)
+  ![Screenshot from 2023-06-28 21-37-55](https://github.com/dapplooker/dapplooker-sdk/assets/95044988/49b73bbc-da18-4bfd-8116-4b83679d4d7d)
+
+- Click on the `"API"` Button
+
+  ![img.png](.assets/chartPageAPI.png)
+- Get the UUID of your chart from Endpoint of the chart API.
+
+  ![img.png](.assets/APIEndpoints.png)
 
 
 #### 4. Import the SDK
 
-Once you have imported the SDK, you can create a DapplookerSDK instance and make API calls using the API key and chart UUID that you obtained in the previous steps.
+Once you have installed the SDK, import it into your project. With the imported SDK, create an instance of the DappLookerChartsAPI and make API calls using the API key and chart UUID obtained in the previous steps.
 
 ### Examples
+Here's an example of how you can use the DappLooker SDK:
 
 ```javascript
-const DappLookerSDK = require("dapplooker-sdk");
+const DappLookerChartsAPI = require("dapplooker-sdk");
 
-const getChartData = async () => {
-  let id = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
-  let key = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
+async function getChartData() => {
+  let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
+  let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
 
-  let response = await DappLookerSDK.chartAPIData(id, key);
-  console.log("Chart data: ", JSON.stringify(response?.data));
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  console.log("Chart API Data: ", JSON.stringify(response));
 };
 
 getChartData();
 ```
 
-Typescript support is also available
+The DappLooker SDK also provides TypeScript support for developers who prefer type-checking and enhanced code editor features.
 
 ```jsx
 //Typescript
 import { DappLookerSDK } from "dapplooker-sdk";
-```
 
-<h1>Social Links</h1>
+const getChartData = async () => {
+  let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
+  let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
+
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  console.log("Chart API Data: ", JSON.stringify(response));
+};
+
+getChartData();
+```
+By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
+
+## Resources
+- **[Website](https://push.org)** To checkout our Product.
+- **[Docs](https://docs.push.org/developers/)** For comprehensive documentation.
+- **[Medium](https://medium.com/push-protocol)** To learn more about our partners, new launches, etc.
+- **[GitHub](https://github.com/ethereum-push-notification-service)** for source code, project board, issues, and pull requests.
+- **[Youtube](https://twitter.com/pushprotocol)** Subscribe to our YouTube channel for video tutorials, demos, and informative content.
+
+## Contributing
+
+We invite you to become a valued member of the DappLooker community, an open-source project committed to transparency in our development process. We appreciate any contributions you can make, whether it's helping us identify and fix bugs, suggesting new features, improving our documentation, or spreading the word about DappLooker.
+
+If you come across any errors or issues while using DappLooker, please take a moment to create a bug report. Your feedback is invaluable in improving the reliability. We also value the importance of comprehensive documentation. If you find any gaps or areas that need improvement in our documentation, please don't hesitate, Your suggestions will enable us to provide better resources for our users.
+
+If you're unsure where to begin or need assistance, we invite you to join our Discord community. We'll be more than happy to help you get started on your journey with DappLooker.
+
+## Social Links
 
 Follow us to stay updated with the latest news and updates!
 
-<a href="https://dapplooker.com/" target="_blank">Website</a>
-<a href="https://dapplooker.com/community" target="_blank">Discord</a>
-<a href="https://twitter.com/dapplooker" target="_blank">Twitter</a>
-<a href="https://t.me/dapplooker" target="_blank">Telegram</a>
-<a href="https://dapplooker.medium.com/" target="_blank">Medium</a>
+<a href="https://dapplooker.com/community" target="_blank">Discord</a> |
+<a href="https://twitter.com/dapplooker" target="_blank">Twitter</a> |
+<a href="https://t.me/dapplooker" target="_blank">Telegram</a> |
 <a href="https://www.linkedin.com/company/dapplooker/" target="_blank">Linkedin</a>
-<a href="https://www.youtube.com/channel/UC1KJmtb3UhnWSN_sDv71_fg" target="_blank">Youtube</a>
 
