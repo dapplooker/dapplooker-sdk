@@ -53,10 +53,10 @@ npm install @dapplooker/dapplooker-sdk
 - After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
   
   ![img.png](.assets/APIPage.png)
-- Click on `"+ API key"`.
+- Click on `+ API Key`.
 
   ![img.png](.assets/AddKey.png)
-- Provide a name for your API key and click on `"Generate"`.
+- Provide a name for your API key and click on `Generate Key`.
 
   ![img.png](.assets/generateKey.png)
 - Copy your API key for future use.
@@ -69,7 +69,7 @@ npm install @dapplooker/dapplooker-sdk
 - Create a new Chart or Open a Existing Created Chart
   ![Screenshot from 2023-06-28 21-37-55](https://github.com/dapplooker/dapplooker-sdk/assets/95044988/49b73bbc-da18-4bfd-8116-4b83679d4d7d)
 
-- Click on the `"API"` Button
+- Click on the `API` Button
 
   ![img.png](.assets/chartPageAPI.png)
 - Get the UUID of your chart from Endpoint of the chart API.
