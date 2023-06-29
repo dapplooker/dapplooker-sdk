@@ -52,7 +52,7 @@ npm install dapplooker-sdk
 
 - Create an account on the [DappLooker website](https://dapplooker.com/).
 - After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
-  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPage.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPageHighlighted.png)
 - Click on `+ API Key`.
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/AddKey.png)
 - Provide a name for your API key and click on `Generate Key`.
@@ -79,17 +79,39 @@ Once you have installed the SDK, import it into your project. With the imported 
 Here's an example of how you can use the DappLooker SDK:
 
 ```javascript
+//Javascript
 const DappLookerChartsAPI = require("dapplooker-sdk");
 
 async function getChartData() => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  let outputFormat = 'json' // This is a optional argument you can use 'json' or pass empty as output format 
+  
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
 getChartData();
+
+> Output (Default):
+/*{
+  "rows": [["2023-02-26T00:00:00Z"]],
+  "cols": [{
+      "description": null,
+      "semantic_type": null,
+      "table_id": 872
+    }],
+  "insights": [{ "previous-value": 9}],
+  "results_timezone": "GMT"
+}*/
+
+
+> Output (JSON):
+/*[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
 ```
 
 The DappLooker SDK also provides TypeScript support for developers who prefer type-checking and enhanced code editor features.
@@ -101,12 +123,33 @@ import { DappLookerSDK } from "dapplooker-sdk";
 const getChartData = async () => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  let outputFormat = 'json' // This is a optional argument you can use 'json' or pass empty as output format 
+  
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
 getChartData();
+
+> Output (Default):
+/*{
+  "rows": [["2023-02-26T00:00:00Z"]],
+  "cols": [{
+      "description": null,
+      "semantic_type": null,
+      "table_id": 872
+    }],
+  "insights": [{ "previous-value": 9}],
+  "results_timezone": "GMT"
+}*/
+
+
+> Output (JSON):
+/*[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
 ```
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
