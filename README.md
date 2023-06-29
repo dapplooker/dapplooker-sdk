@@ -32,7 +32,7 @@ DappLooker is a Web3 analytics platform that is dedicated to making blockchain a
 
 <p style="font-weight:600;">Welcome to the GitHub profile for DappLooker</p>
 
-📚 Read our comprehensive [documentation](https://dapplooker.notion.site/dapplooker/DappLooker-Documentation-f3113336bdce4ecea688fa0ba69cec98) to learn how to start building with DappLooker.
+📚 Read our comprehensive [documentation](https://docs.dapplooker.com) to learn how to start building with DappLooker.
 
 
 # DappLooker SDK
@@ -52,30 +52,23 @@ npm install dapplooker-sdk
 
 - Create an account on the [DappLooker website](https://dapplooker.com/).
 - After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
-  
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPage.png)
 - Click on `+ API Key`.
-
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/AddKey.png)
 - Provide a name for your API key and click on `Generate Key`.
-
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/generateKey.png)
 - Copy your API key for future use.
-
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/copyAPIKey.png)
 
 #### 3. Get Your Chart UUID
 
 - Visit the [DappLooker Analytics Website](https://analytics.dapplooker.com/)
 - Create a new Chart or Open a Existing Created Chart
-  ![Screenshot from 2023-06-28 21-37-55](https://github.com/dapplooker/dapplooker-sdk/assets/95044988/49b73bbc-da18-4bfd-8116-4b83679d4d7d)
-
+  ![ChartImage.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/ChartImage.png)
 - Click on the `API` Button
-
-  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/chartPageAPI.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/chartAPIButton.png)
 - Get the UUID of your chart from Endpoint of the chart API.
-
-  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIEndpoints.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/chartUUID.png)
 
 
 #### 4. Import the SDK
