@@ -118,7 +118,7 @@ The DappLooker SDK also provides TypeScript support for developers who prefer ty
 
 ```jsx
 //Typescript
-import { DappLookerSDK } from "dapplooker-sdk";
+import { DappLookerChartsAPI } from "dapplooker-sdk";
 
 const getChartData = async () => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
