@@ -95,8 +95,8 @@ getChartData();
 
 > Output (Without outputFormat):
 /*{
-  "rows": [["2023-02-26T00:00:00Z"]],
-  "cols": [{
+  "rows": [["2023-02-26T00:00:00Z"]], // This will contain data of all rows in list of list format
+  "cols": [{                          // This will contain details of each column
       "description": null,
       "semantic_type": null,
       "table_id": 872
@@ -107,7 +107,9 @@ getChartData();
 
 
 > Output (With outputFormat as json):
-/*[
+/*
+In JSON format we will get result with list of objects with key as column name and value as column's row value
+[
 {"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
 {"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
 {"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
@@ -155,7 +157,7 @@ By integrating the dapplooker-sdk into your Dapp, you can easily access and util
 
 ## Resources
 - **[Website](https://dapplooker.com/)** To checkout our Product.
-- **[Docs](https://dapplooker.notion.site/dapplooker/DappLooker-Documentation-f3113336bdce4ecea688fa0ba69cec98)** For comprehensive documentation.
+- **[Docs](https://docs.dapplooker.com)** For comprehensive documentation.
 - **[Medium](https://dapplooker.medium.com/)** To learn more about our partners, new launches, etc.
 - **[GitHub](https://github.com/dapplooker/)** for source code, project board, issues, and pull requests.
 - **[Youtube](https://www.youtube.com/channel/UC1KJmtb3UhnWSN_sDv71_fg)** Subscribe to our YouTube channel for video tutorials, demos, and informative content.
