@@ -38,7 +38,7 @@ DappLooker is a Web3 analytics platform that is dedicated to making blockchain a
 # DappLooker SDK
 The dapplooker-sdk provides developers with programmatic access to reliable and comprehensive blockchain data in the Web3 environment. By integrating the DappLooker SDK, you can easily retrieve popular charts data for your decentralized applications (Dapps).
 
-### Node version: >=14
+> #### Node version: >=14
 
 ## Installation
 To start using the DappLooker SDK, follow these steps:
@@ -52,7 +52,7 @@ npm install dapplooker-sdk
 
 - Create an account on the [DappLooker website](https://dapplooker.com/).
 - After signing up, navigate to the [API keys](https://dapplooker.com/user/api) page.
-  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPage.png)
+  ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/APIPageHighlighted.png)
 - Click on `+ API Key`.
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/AddKey.png)
 - Provide a name for your API key and click on `Generate Key`.
@@ -79,40 +79,85 @@ Once you have installed the SDK, import it into your project. With the imported 
 Here's an example of how you can use the DappLooker SDK:
 
 ```javascript
+//Javascript
 const DappLookerChartsAPI = require("dapplooker-sdk");
 
 async function getChartData() => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  let outputFormat = 'json' // This is a optional argument, valid value is `json`.
+  
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
 getChartData();
+
+> Output (Without outputFormat):
+/*{
+  "rows": [["2023-02-26T00:00:00Z"]], // This will contain data of all rows in list of list format
+  "cols": [{                          // This will contain details of each column
+      "description": null,
+      "semantic_type": null,
+      "table_id": 872
+    }],
+  "insights": [{ "previous-value": 9}],
+  "results_timezone": "GMT"
+}*/
+
+
+> Output (With outputFormat as json):
+/*
+In JSON format we will get result with list of objects with key as column name and value as column's row value
+[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
 ```
 
 The DappLooker SDK also provides TypeScript support for developers who prefer type-checking and enhanced code editor features.
 
 ```jsx
 //Typescript
-import { DappLookerSDK } from "dapplooker-sdk";
+import { DappLookerChartsAPI } from "dapplooker-sdk";
 
 const getChartData = async () => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey);
+  let outputFormat = 'json' // This is a optional argument, valid value is `json`. 
+  
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
 getChartData();
+
+> Output (Without outputFormat):
+/*{
+  "rows": [["2023-02-26T00:00:00Z"]],
+  "cols": [{
+      "description": null,
+      "semantic_type": null,
+      "table_id": 872
+    }],
+  "insights": [{ "previous-value": 9}],
+  "results_timezone": "GMT"
+}*/
+
+
+> Output ((With outputFormat as json):
+/*[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
 ```
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
 ## Resources
 - **[Website](https://dapplooker.com/)** To checkout our Product.
-- **[Docs](https://dapplooker.notion.site/dapplooker/DappLooker-Documentation-f3113336bdce4ecea688fa0ba69cec98)** For comprehensive documentation.
+- **[Docs](https://docs.dapplooker.com)** For comprehensive documentation.
 - **[Medium](https://dapplooker.medium.com/)** To learn more about our partners, new launches, etc.
 - **[GitHub](https://github.com/dapplooker/)** for source code, project board, issues, and pull requests.
 - **[Youtube](https://www.youtube.com/channel/UC1KJmtb3UhnWSN_sDv71_fg)** Subscribe to our YouTube channel for video tutorials, demos, and informative content.
