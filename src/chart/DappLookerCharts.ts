@@ -14,8 +14,8 @@ export class DappLookerChartsAPI {
         try {
 
             if ((outputFormat !== undefined && ChartConstants.supportedFormatType.includes(outputFormat)) || outputFormat === undefined) {
-                let chartAPIUrl = ChartConstants.getChartDetailUrl;
-                let fullAPIUrl = `${chartAPIUrl}/${chartUUID}?api_key=${apiKey}&output_format=${format}`;
+                let chartAPIUrl: string = ChartConstants.getChartDetailUrl;
+                let fullAPIUrl: string = `${chartAPIUrl}/${chartUUID}?api_key=${apiKey}&output_format=${format}`;
                 console.log(`Calling DappLooker API: ${fullAPIUrl}`);
                 let resObject = await fetch(fullAPIUrl, {
                     signal: controller.signal
@@ -24,7 +24,7 @@ export class DappLookerChartsAPI {
                 if (successResponseCode.includes(resObject.status)) {
                     return await resObject.json();
                 } else {
-                    let errorDetails = await resObject.text();
+                    let errorDetails: string = await resObject.text();
                     return {
                         msg: `Failed to get response from DappLooker API, error code: ${resObject.status}, error: ${errorDetails}`
                     };
