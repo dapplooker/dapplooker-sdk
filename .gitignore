@@ -1,3 +1,4 @@
 node_modules
-/dist
-package-lock.json
+.idea
+/typescript/dist
+typescript/package-lock.json
