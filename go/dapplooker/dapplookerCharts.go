@@ -32,7 +32,7 @@ func (api *DappLookerChartsAPI) GetChartData() (map[string]interface{}, error) {
 
 	defer response.Body.Close()
 
-	if response.StatusCode != http.StatusOK {
+	if response.StatusCode < http.StatusOK && response.StatusCode > http.StatusNoContent {
 		return nil, fmt.Errorf("failed to get response from DappLooker API, error code: %d", response.StatusCode)
 	}
 
@@ -49,3 +49,4 @@ func (api *DappLookerChartsAPI) GetChartData() (map[string]interface{}, error) {
 
 	return chart_data, nil
 }
+
