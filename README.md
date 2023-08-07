@@ -93,10 +93,18 @@ async function getChartData() => {
 
 getChartData();
 
+
+> Output (With outputFormat value as json):
+/*[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
+
 > Output (Without outputFormat):
 /*{
-  "rows": [["2023-02-26T00:00:00Z"]], // This will contain data of all rows in list of list format
-  "cols": [{                          // This will contain details of each column
+  "rows": [["2023-02-26T00:00:00Z"]],
+  "cols": [{
       "description": null,
       "semantic_type": null,
       "table_id": 872
@@ -104,16 +112,6 @@ getChartData();
   "insights": [{ "previous-value": 9}],
   "results_timezone": "GMT"
 }*/
-
-
-> Output (With outputFormat as json):
-/*
-In JSON format we will get result with list of objects with key as column name and value as column's row value
-[
-{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
-{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
-{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
-]*/
 ```
 
 The DappLooker SDK also provides TypeScript support for developers who prefer type-checking and enhanced code editor features.
@@ -133,6 +131,13 @@ const getChartData = async () => {
 
 getChartData();
 
+> Output (With outputFormat value as json):
+/*[
+{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
+{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
+{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
+]*/
+
 > Output (Without outputFormat):
 /*{
   "rows": [["2023-02-26T00:00:00Z"]],
@@ -144,14 +149,6 @@ getChartData();
   "insights": [{ "previous-value": 9}],
   "results_timezone": "GMT"
 }*/
-
-
-> Output ((With outputFormat as json):
-/*[
-{"Day Timestamp":"2023-02-26","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0},
-{"Day Timestamp":"2023-03-05","Sum of Attestation Requested Count":16.0,"Sum of Attestation Completed Count":2.0,"Success Percentage":12.5,"Failure Percentage":87.5},
-{"Day Timestamp":"2023-05-14","Sum of Attestation Requested Count":3.0,"Sum of Attestation Completed Count":0.0,"Success Percentage":0.0,"Failure Percentage":100.0}
-]*/
 ```
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
