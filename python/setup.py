@@ -13,7 +13,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="dapplooker",
-    version="0.0.3",
+    version="0.0.4",
     description="A minimal, complete, python API for DappLooker",
     long_description=long_description,
     url="https://github.com/0xSumitBanik/dapplooker-py-sdk",
