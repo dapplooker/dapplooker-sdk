@@ -19,7 +19,7 @@ public class DappLookerChartsAPI {
      * @param format    The format of the response.
      * @return The response from the DappLooker API.
      */
-    public static Map<String, Object> getChartData(String chartUuid, String apiKey, String format) {
+    public static Object getChartData(String chartUuid, String apiKey, String format) {
         String outputFormat = (format != null) ? format.toLowerCase() : null;
 
         // Check if the output format is supported.
@@ -48,7 +48,7 @@ public class DappLookerChartsAPI {
                 }
                 Map<String, Object> jsonResponse = new HashMap<>();
                 jsonResponse.put("response", response);
-                return jsonResponse;
+                return jsonResponse.get("response");
             } else {
                 String errorDetails = "";
                 try (Scanner scanner = new Scanner(connection.getErrorStream())) {
