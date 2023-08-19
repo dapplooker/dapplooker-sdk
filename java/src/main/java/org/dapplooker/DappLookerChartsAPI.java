@@ -30,7 +30,7 @@ public class DappLookerChartsAPI {
 
         // Build the API URL.
         String chartApiUrl = ChartConstants.getChartDetailUrl;
-        String fullApiUrl = chartApiUrl + "/" + chartUuid + "?api_key=" + apiKey + "&output_format=" + format;
+        String fullApiUrl = String.format("%s/%s?api_key=%s&output_format=%s", chartApiUrl, chartUuid, apiKey, format);
 
         // Call the API and get the response.
         try {
@@ -69,3 +69,4 @@ public class DappLookerChartsAPI {
         }
     }
 }
+
