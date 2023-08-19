@@ -16,7 +16,7 @@ class DappLookerChartsAPI:
     """
 
     @staticmethod
-    def get_chart_data(chart_uuid: str, api_key: str, format: str = None) -> list(dict):
+    def get_chart_data(chart_uuid: str, api_key: str, format: str = None) -> list:
         """
         Get chart data from DappLooker API.
 
