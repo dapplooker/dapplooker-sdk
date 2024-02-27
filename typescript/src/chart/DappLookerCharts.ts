@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 
 export class DappLookerChartsAPI {
-    static async getChartData(chartUUID: string, apiKey: string, format?: string) {
+    static async getChartData(chartUUID: string, apiKey: string, format?: string, filterParams?: { string: string }) {
         let outputFormat: string | undefined = format?.toLowerCase();
         let requestTimedOut: boolean = false;
         const controller: AbortController = new AbortController();
@@ -16,6 +16,7 @@ export class DappLookerChartsAPI {
             if ((outputFormat !== undefined && ChartConstants.supportedFormatType.includes(outputFormat)) || outputFormat === undefined) {
                 let chartAPIUrl: string = ChartConstants.getChartDetailUrl;
                 let fullAPIUrl: string = `${chartAPIUrl}/${chartUUID}?api_key=${apiKey}&output_format=${format}`;
+                fullAPIUrl = filterParams ? fullAPIUrl.concat(`&filterParams=${JSON.stringify(filterParams)}`): fullAPIUrl;
                 console.log(`Calling DappLooker API: ${fullAPIUrl}`);
                 let resObject = await fetch(fullAPIUrl, {
                     signal: controller.signal
@@ -36,7 +37,7 @@ export class DappLookerChartsAPI {
                     outputFormatEntered: format,
                 };
             }
-        } catch (e: any){
+        } catch (e: any) {
             if (requestTimedOut) {
                 return {
                     msg: "Connection timeout"
