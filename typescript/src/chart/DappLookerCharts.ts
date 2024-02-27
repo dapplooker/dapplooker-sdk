@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 
 export class DappLookerChartsAPI {
-    static async getChartData(chartUUID: string, apiKey: string, format?: string, filterParams?: [{string: string}]) {
+    static async getChartData(chartUUID: string, apiKey: string, format?: string, filterParams?: string) {
         let outputFormat: string | undefined = format?.toLowerCase();
         let requestTimedOut: boolean = false;
         const controller: AbortController = new AbortController();
