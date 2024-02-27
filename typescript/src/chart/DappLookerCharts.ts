@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 
 export class DappLookerChartsAPI {
-    static async getChartData(chartUUID: string, apiKey: string, format?: string) {
+    static async getChartData(chartUUID: string, apiKey: string, format?: string, filterParams?: [{string: string}]) {
         let outputFormat: string | undefined = format?.toLowerCase();
         let requestTimedOut: boolean = false;
         const controller: AbortController = new AbortController();
@@ -12,10 +12,10 @@ export class DappLookerChartsAPI {
             requestTimedOut = true;
         }, ChartConstants.timeoutLimit);
         try {
-
             if ((outputFormat !== undefined && ChartConstants.supportedFormatType.includes(outputFormat)) || outputFormat === undefined) {
                 let chartAPIUrl: string = ChartConstants.getChartDetailUrl;
                 let fullAPIUrl: string = `${chartAPIUrl}/${chartUUID}?api_key=${apiKey}&output_format=${format}`;
+                fullAPIUrl = filterParams ? fullAPIUrl.concat(`&filterParams=${filterParams}`): fullAPIUrl;
                 console.log(`Calling DappLooker API: ${fullAPIUrl}`);
                 let resObject = await fetch(fullAPIUrl, {
                     signal: controller.signal
@@ -29,7 +29,6 @@ export class DappLookerChartsAPI {
                         msg: `Failed to get response from DappLooker API, error code: ${resObject.status}, error: ${errorDetails}`
                     };
                 }
-
             } else {
                 return {
                     msg: "Output format Incorrect!! Please use output format as json",
