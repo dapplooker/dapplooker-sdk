@@ -25,25 +25,29 @@
 DappLooker is a no-code multi-chain community-driven analytics and visualization platform for blockchain networks and Dapps. Users can run Visual SQL queries on blockchain data, using easy to use simple editor. Charts and dashboards can be forked, edited, and shared with the community.
 
 DappLooker aims to empower everyone to easily understand blockchain data, do analytics and easily build beautiful charts and dashboards. You can build and share key metrics for Defi, NFT, gaming, and multi-chain protocols.
+
 </p>
 
 ### What We Do ?
+
 DappLooker is a Web3 analytics platform that is dedicated to making blockchain analytics accessible and simplified for everyone. Our goal is to provide a seamless and user-friendly experience With our intuitive, no-code platform, you can effortlessly analyze blockchain networks and Dapps. Our No-code interface allows you to create stunning charts and dashboards, enabling you to visualize and understand complex blockchain data without the need for coding skills.
 
 <p style="font-weight:600;">Welcome to the GitHub profile for DappLooker</p>
 
 📚 Read our comprehensive [documentation](https://docs.dapplooker.com) to learn how to start building with DappLooker.
 
-
 # DappLooker SDK
+
 The dapplooker-sdk provides developers with programmatic access to reliable and comprehensive blockchain data in the Web3 environment. By integrating the DappLooker SDK, you can easily retrieve popular charts data for your decentralized applications (Dapps).
 
 > #### Node version: >=14
 
 ## Installation
+
 To start using the DappLooker SDK, follow these steps:
 
 #### 1. Install the SDK:
+
 ```bash
 npm install dapplooker-sdk
 ```
@@ -70,12 +74,12 @@ npm install dapplooker-sdk
 - Get the UUID of your chart from Endpoint of the chart API.
   ![img.png](https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/chartUUID.png)
 
-
 #### 4. Import the SDK
 
 Once you have installed the SDK, import it into your project. With the imported SDK, create an instance of the DappLookerChartsAPI and make API calls using the API key and chart UUID obtained in the previous steps.
 
 ### Examples
+
 Here's an example of how you can use the DappLooker SDK:
 
 ```javascript
@@ -86,8 +90,12 @@ async function getChartData() => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
   let outputFormat = 'json' // This is a optional argument, valid value is `json`.
-  
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
+  let filterParams = {
+     token_symbol:"btc",
+     subgraph_deployment:"QmXZiV6S13ha6QXq4dmaM3TB4CHcD"
+  } // This is a optional argument, you can pass multiple arguments which your chart supports`.
+
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
@@ -122,9 +130,13 @@ import { DappLookerChartsAPI } from "dapplooker-sdk";
 const getChartData = async () => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-  let outputFormat = 'json' // This is a optional argument, valid value is `json`. 
-  
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
+  let outputFormat = 'json' // This is a optional argument, valid value is `json`.
+  let filterParams = {
+     token_symbol:"btc",
+     subgraph_deployment:"QmXZiV6S13ha6QXq4dmaM3TB4CHcD"
+  } // This is a optional argument, you can pass multiple arguments which your chart supports`.
+
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
   console.log("Chart API Data: ", JSON.stringify(response));
 };
 
@@ -149,9 +161,11 @@ getChartData();
   "results_timezone": "GMT"
 }*/
 ```
+
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
 ## Resources
+
 - **[Website](https://dapplooker.com/)** To checkout our Product.
 - **[Docs](https://docs.dapplooker.com)** For comprehensive documentation.
 - **[Medium](https://dapplooker.medium.com/)** To learn more about our partners, new launches, etc.
