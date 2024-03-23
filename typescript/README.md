@@ -96,7 +96,7 @@ async function getChartData() => {
   } // This is a optional argument, you can pass multiple arguments which your chart supports`.
 
   let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
-  console.log("Chart API Data: ", JSON.stringify(response));
+  console.log("API Response Data: ", JSON.stringify(response));
 };
 
 getChartData();
@@ -137,7 +137,7 @@ const getChartData = async () => {
   } // This is a optional argument, you can pass multiple arguments which your chart supports`.
 
   let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
-  console.log("Chart API Data: ", JSON.stringify(response));
+  console.log("API Response Data: ", JSON.stringify(response));
 };
 
 getChartData();
