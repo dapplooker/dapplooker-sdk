@@ -85,10 +85,11 @@ const DappLookerChartsAPI = require("dapplooker-sdk");
 async function getChartData() => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-  let outputFormat = 'json' // This is a optional argument, valid value is `json`.
+  let outputFormat = 'json'; // This is a optional argument, valid value is `json`.
+  let filterParams = {}; 
   
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
-  console.log("Chart API Data: ", JSON.stringify(response));
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
+  console.log("API Response Data: ", JSON.stringify(response));
 };
 
 getChartData();
@@ -123,10 +124,11 @@ import { DappLookerChartsAPI } from "dapplooker-sdk";
 const getChartData = async () => {
   let chartUUID = "dc9b69d8-7ca1-45d4-8ad0-a17f915f3f0"; // Replace it with chart UUID you are working with
   let apiKey = "qzusb5p3q246ip246ab6g0p8ppzb7u"; // Replace it with your API key
-  let outputFormat = 'json' // This is a optional argument, valid value is `json`. 
+  let outputFormat = 'json'; // This is a optional argument, valid value is `json`.
+  let filterParams = {}; 
   
-  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat);
-  console.log("Chart API Data: ", JSON.stringify(response));
+  let response = await DappLookerChartsAPI.getChartData(chartUUID, apiKey, outputFormat, filterParams);
+  console.log("API Response Data: ", JSON.stringify(response));
 };
 
 getChartData();
