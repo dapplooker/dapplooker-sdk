@@ -2,11 +2,11 @@
 class NLQConstants {
 
     public get getNlqDetailUrl(): string {
-        return ``;
+        return `https://api.dapplooker.com/nlq`;
     }
 
     public get getSchemaNameUrl(): string {
-        return ``;
+        return `https://api.dapplooker.com/project`;
     }
 
     public get timeoutLimit(): number{
