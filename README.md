@@ -1,6 +1,6 @@
 <h1 align="center">
     <picture>
-        <source media="(prefers-color-scheme: light)" srcset="https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/DLLogo1800x400.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://d2yxqfr8upg55w.cloudfront.net/assets/svg/dapplooker-dark-logo.svg">
         <source media="(prefers-color-scheme: dark)" srcset="https://d2yxqfr8upg55w.cloudfront.net/assets/img/DL_LOGO_dark_theme.png">
         <img width='60%' height='60%' src="https://d2yxqfr8upg55w.cloudfront.net/npm-package-images/DLLogo1800x400.png" alt="DL logo">
     </picture>
