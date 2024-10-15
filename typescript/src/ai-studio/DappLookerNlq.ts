@@ -43,7 +43,7 @@ export class DappLookerNlqAPI {
             clearTimeout(timeoutId);
         }
     }
-    static async getNlqData( apiKey: string, question: string, getSchemaName: string) {
+    static async getNlqData(apiKey: string, question: string, schemaName: string) {
         let requestTimedOut: boolean = false;
         const controller: AbortController = new AbortController();
         const timeoutId: NodeJS.Timeout = setTimeout(() => {
@@ -51,31 +51,39 @@ export class DappLookerNlqAPI {
             requestTimedOut = true;
         }, NlqConstants.timeoutLimit);
         try {
-                let nlqAPIUrl: string = NlqConstants.getNlqDetailUrl;
-                let fullAPIUrl: string = `${nlqAPIUrl}?api_key=${apiKey}`;
-                const requestBody = {
-                    question: question,
-                    getSchemaName: getSchemaName
-                }
-                console.log(`Calling DappLooker API: ${fullAPIUrl}`);
-                let resObject = await fetch(fullAPIUrl, {
-                    body: JSON.stringify(requestBody),
-                    signal: controller.signal
-                });
-                const successResponseCode = [200, 201, 202, 203, 204];
-                if (successResponseCode.includes(resObject.status)) {
-                    return await resObject.json();
-                } else {
-                    let errorDetails: string = await resObject.text();
-                    return {
-                        msg: `Failed to get response from DappLooker API, error code: ${resObject.status}, error: ${errorDetails}`
-                    };
-                } 
+            const formatSchemaName = (name: string) => {
+                return name.replace(/\s+/g, '_').toLowerCase();
+            };
+            const formattedSchemaName = formatSchemaName(schemaName);
+            const data = new URLSearchParams({
+                apiKey: apiKey,
+                question: question,
+                schemaName: formattedSchemaName,
+            });
+    
+            let resObject = await fetch(NlqConstants.getNlqDetailUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: data.toString(),
+                signal: controller.signal,
+            });
+
+            const successResponseCode = [200, 201, 202, 203, 204];
+            if (successResponseCode.includes(resObject.status)) {
+                return await resObject.json();
+            } else {
+                let errorDetails: string = await resObject.text();
+                return {
+                    msg: `Failed to get response from DappLooker API, error code: ${resObject.status}, error: ${errorDetails}`,
+                };
+            }
         } catch (e: any) {
             if (requestTimedOut) {
                 return {
-                    msg: "Connection timeout"
-                }
+                    msg: "Connection timeout",
+                };
             }
             return {
                 msg: `Exception getting result from DappLooker API, ${e.message}`,
@@ -84,6 +92,7 @@ export class DappLookerNlqAPI {
             clearTimeout(timeoutId);
         }
     }
+    
 }
 
 export default DappLookerNlqAPI;

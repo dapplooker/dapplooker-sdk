@@ -6,7 +6,7 @@ class NLQConstants {
     }
 
     public get getSchemaNameUrl(): string {
-        return `https://api.dapplooker.com/project`;
+        return `https://api.dapplooker.com/projects`;
     }
 
     public get timeoutLimit(): number{

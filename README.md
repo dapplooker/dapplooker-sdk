@@ -152,6 +152,27 @@ getChartData();
   "results_timezone": "GMT"
 }*/
 ```
+
+Here's an example to get the data from AI studio of DappLooker
+
+```jsx
+//Typescript
+import { DappLookerNlqAPI } from "dapplooker-sdk";
+
+async function getResults(): Promise<any> {
+  let apiKey = "d6fbd65055ef4510807fa4eb1662792b"
+  let response = await DappLookerNlqAPI.getNlqData(apiKey, 'What is the current gas price per hour on the Ethereum network?', 'ethereum');
+  console.log("API Response Data: ", JSON.stringify(response));
+};
+
+getResults();
+
+> Output :
+/*
+API Response Data:  {"success":true,"data":{"msg":"Visualization Result","vizualizationData":{"rows":[["2024-10-14T10:00:00Z",16,12],["2024-10-14T11:00:00Z",31,20],["2024-10-14T12:00:00Z",42,34],["2024-10-14T13:00:00Z",41,32],["2024-10-14T14:00:00Z",50,43],["2024-10-14T15:00:00Z",46,39],["2024-10-14T16:00:00Z",35,30],["2024-10-14T17:00:00Z",39,29],["2024-10-14T18:00:00Z",32,25],["2024-10-14T19:00:00Z",28,22],["2024-10-14T20:00:00Z",24,19],["2024-10-14T21:00:00Z",21,16],["2024-10-14T22:00:00Z",18,14],["2024-10-14T23:00:00Z",17,13],["2024-10-15T00:00:00Z",17,15],["2024-10-15T01:00:00Z",19,14],["2024-10-15T02:00:00Z",18,14],["2024-10-15T03:00:00Z",17,14],["2024-10-15T04:00:00Z",15,12],["2024-10-15T05:00:00Z",14,12],["2024-10-15T06:00:00Z",13,11],["2024-10-15T07:00:00Z",15,12],["2024-10-15T08:00:00Z",16,13],["2024-10-15T09:00:00Z",18,14],["2024-10-15T10:00:00Z",15,12]],"cols":[{"display_name":"Hour","source":"native","field_ref":["field","Hour",{"base-type":"type/DateTime"}],"name":"Hour","base_type":"type/DateTime","effective_type":"type/DateTime"},{"display_name":"Average","source":"native","field_ref":["field","Average",{"base-type":"type/Float"}],"name":"Average","base_type":"type/Float","effective_type":"type/Float"},{"display_name":"Low","source":"native","field_ref":["field","Low",{"base-type":"type/Float"}],"name":"Low","base_type":"type/Float","effective_type":"type/Float"}],"native_form":{"query":"SELECT \n    toStartOfHour(timestamp) AS Hour,\n    ROUND(avg(gas_price) / power(10, 9)) AS Average,\n    ROUND(quantile(0.25)(gas_price) / power(10, 9)) AS Low\nFROM \n    ethereum.transactions\nWHERE \n    timestamp >= now() - INTERVAL 1 DAY\n    AND timestamp < now()\nGROUP BY \n    Hour\nORDER BY \n    Hour;","params":null},"results_timezone":"GMT","results_metadata":{"columns":[{"display_name":"Hour","field_ref":["field","Hour",{"base-type":"type/DateTime"}],"name":"Hour","base_type":"type/DateTime","effective_type":"type/DateTime","semantic_type":null,"fingerprint":{"global":{"distinct-count":25,"nil%":0},"type":{"type/DateTime":{"earliest":"2024-10-14T10:00:00Z","latest":"2024-10-15T10:00:00Z"}}}},{"display_name":"Average","field_ref":["field","Average",{"base-type":"type/Float"}],"name":"Average","base_type":"type/Float","effective_type":"type/Float","semantic_type":null,"fingerprint":{"global":{"distinct-count":18,"nil%":0},"type":{"type/Number":{"min":13,"q1":16.121320343559642,"q3":32.75,"max":50,"sd":11.397075648311427,"avg":24.68}}}},{"display_name":"Low","field_ref":["field","Low",{"base-type":"type/Float"}],"name":"Low","base_type":"type/Float","effective_type":"type/Float","semantic_type":null,"fingerprint":{"global":{"distinct-count":16,"nil%":0},"type":{"type/Number":{"min":11,"q1":12.694841350859116,"q3":26,"max":43,"sd":9.481912605939092,"avg":19.64}}}}]},"insights":[{"previous-value":18,"unit":"hour","offset":554173.141530699,"last-change":-0.16666666666666666,"col":"Average","slope":-27.692307691919787,"last-value":15,"best-fit":["+",5488330.3818478165,["*",-554148.5544930139,["log","x"]]]},{"previous-value":14,"unit":"hour","offset":429669.413840075,"last-change":-0.14285714285714285,"col":"Low","slope":-21.470769230465464,"last-value":12,"best-fit":["+",4255285.115637468,["*",-429649.75721279817,["log","x"]]]}],"questionId":1370,"answerId":1152,"entityId":7193,"entityType":"CHART"},"questionId":1370,"extraData":{"userId":121873,"apiKeyId":88,"apiType":3,"date":"2024-10-15T00:00:00.000Z"},"nlqLogId":49}}
+*/
+```
+
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
 ## Resources
