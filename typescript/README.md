@@ -162,6 +162,69 @@ getChartData();
 }*/
 ```
 
+Here's an example to get the data from AI studio of DappLooker
+
+```jsx
+//Typescript
+import { DappLookerNlqAPI } from "dapplooker-sdk";
+
+async function getResults(): Promise<any> {
+  let apiKey = "YOUR_DAPPLOOKER_API_KEY"
+  let response = await DappLookerNlqAPI.getNlqData(apiKey, 'What is the current gas price per hour on the Ethereum network?', 'ethereum');
+  console.log("API Response Data: ", JSON.stringify(response));
+};
+
+getResults();
+
+> Output :
+/*
+{
+  "success": true,
+  "data": {
+    "msg": "Visualization Result",
+    "vizualizationData": {
+      "rows": [
+        ["<timestamp>", "<average_value>", "<low_value>"],
+        // More rows...
+      ],
+      "cols": [
+        {
+          "display_name": "Hour",
+          "source": "native",
+          "name": "Hour",
+          "base_type": "type/DateTime",
+          "effective_type": "type/DateTime"
+        },
+        // More columns...
+      ],
+      "native_form": {
+        "query": "<SQL_QUERY>",
+        "params": null
+      },
+      "results_timezone": "GMT",
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "Hour",
+            "name": "Hour",
+            "base_type": "type/DateTime",
+            "effective_type": "type/DateTime"
+          },
+          // More data...
+        ]
+      }
+    },
+    "questionId": "<question_id>",
+    "answerId": "<answer_id>",
+    "entityId": "<entity_id>",
+    "entityType": "CHART"
+  },
+  // More questions...
+  "nlqLogId": "<nlq_log_id>"
+}
+*/
+```
+
 By integrating the dapplooker-sdk into your Dapp, you can easily access and utilize the most reliable and comprehensive blockchain data in the Web3 environment. Start exploring the possibilities and enhancing your decentralized applications with DappLooker SDK today!
 
 ## Resources
