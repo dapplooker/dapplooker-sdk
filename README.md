@@ -157,8 +157,18 @@ Here's an example to get the data from AI studio of DappLooker
 
 ```jsx
 //Typescript
+
 import { DappLookerNlqAPI } from "dapplooker-sdk";
 
+// Get the schema details
+async function getResults(): Promise<any> {
+  let response = await DappLookerNlqAPI.getSchemaName("");
+  console.log("API Response Data: ", JSON.stringify(response));
+};
+
+getResults();
+
+// Get the data from nlq
 async function getResults(): Promise<any> {
   let apiKey = "YOUR_DAPPLOOKER_API_KEY"
   let response = await DappLookerNlqAPI.getNlqData(apiKey, 'What is the current gas price per hour on the Ethereum network?', 'ethereum');
